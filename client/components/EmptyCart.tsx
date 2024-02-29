@@ -1,12 +1,16 @@
-function EmptyCartButton() {
+interface Props {
+  trolley: string[]
+  setTrolley: (trolley: string[]) => void
+}
+
+function EmptyCartButton(props: Props) {
   const emptyCart = () => {
-    console.log('empty cart')
-    localStorage.setItem('trolleyList', JSON.stringify([]))
+    props.setTrolley([])
   }
 
   return (
     <div>
-      <button onclick={emptyCart}>Empty Cart</button>
+      <button onClick={emptyCart}>Empty Cart</button>
     </div>
   )
 }

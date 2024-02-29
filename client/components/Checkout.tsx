@@ -1,17 +1,27 @@
 import React, { useState } from 'react'
 
-function Checkout() {
-  const [trolleyList, setTrolleyList] = useState(() => {
-    const initialList = localStorage.getItem('trolleyList')
-    return initialList
-  })
-  console.log(trolleyList)
+interface Props {
+  trolley: string[]
+}
+
+function Checkout(props: Props) {
+  const totals = props.trolley.reduce((acc, item) => {
+    if (acc[item]) {
+      acc[item]++
+    } else {
+      acc[item] = 1
+    }
+    return acc
+  }, {})
+  console.log(totals)
   return (
     <div>
       <h1>Checkout</h1>
       <ul>
-        {trolleyList.map((item, index) => (
-          <li key={index}>{item}</li>
+        {Object.keys(totals).map((item, index) => (
+          <li key={index}>
+            {item}: {totals[item]}
+          </li>
         ))}
       </ul>
     </div>
