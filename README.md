@@ -1,25 +1,15 @@
-# React Boilerplate
+# Only Paws
 
-## Packages Included
+## Website Features
 
-- react
-- react-router-dom
-- express
-- vite
-- vitest
-- eslint
+- Cats (for sale)
+- Dogs (for sale)
+- Things with Paws (for sale)
 
-## Setup
+## Deployed With Dokku
 
-- [ ] Clone this repo, navigate to it, install packages, and start the server with `npm run dev`
-  <details style="padding-left: 2em">
-    <summary>Tip</summary>
-
-    ```sh
-    npm install
-    npm run dev
-    ```
-  </details>
+Avaiable at [https://onlypaws.herokuapp.com/](https://onlypaws.herokuapp.com/)
 
 ---
-[Provide feedback on this repo](https://docs.google.com/forms/d/e/1FAIpQLSfw4FGdWkLwMLlUaNQ8FtP2CTJdGDUv6Xoxrh19zIrJSkvT4Q/viewform?usp=pp_url&entry.1958421517=boilerplate-react)
+
+### Made By Group 2
