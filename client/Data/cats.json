@@ -1,0 +1,79 @@
+[
+  {
+    "name": "Luna",
+    "age": 3,
+    "species": "Siamese",
+    "personality": "Elegant and poised, with a curious and intelligent disposition.",
+    "photo": "Siamese-cat.png"
+  },
+  {
+    "name": "Oliver",
+    "age": 5,
+    "species": "Maine Coon",
+    "personality": "Laid-back and friendly, enjoys lounging around in cozy spots.",
+    "photo": "Maine-Coon.png"
+  },
+  {
+    "name": "Milo",
+    "age": 4,
+    "species": "British Shorthair",
+    "personality": "Aloof yet affectionate, enjoys observing his surroundings from a distance.",
+    "photo": "British-Shorthair.png"
+  },
+  {
+    "name": "Nala",
+    "age": 2,
+    "species": "Abyssinian",
+    "personality": "Playful and energetic, always on the move and exploring.",
+    "photo": "Abyssinian.png"
+  },
+  {
+    "name": "Simba",
+    "age": 6,
+    "species": "Persian",
+    "personality": "Regal and dignified, with a calm and contemplative nature.",
+    "photo": "Persian.png"
+  },
+  {
+    "name": "Bella",
+    "age": 3,
+    "species": "Bengal",
+    "personality": "Curious and adventurous, with a love for playing hide and seek.",
+    "photo": "Bengal.png"
+  },
+  {
+    "name": "Leo",
+    "age": 1,
+    "species": "Sphynx",
+    "personality": "Energetic and playful, enjoys being the center of attention.",
+    "photo": "Sphynx.png"
+  },
+  {
+    "name": "Max",
+    "age": 4,
+    "species": "Russian Blue",
+    "personality": "Quiet and thoughtful, with a gentle and reserved nature.",
+    "photo": "Russian-Blue.png"
+  },
+  {
+    "name": "Daisy",
+    "age": 7,
+    "species": "Scottish Fold",
+    "personality": "Serene and gentle, loves to curl up and nap in cozy corners.",
+    "photo": "Scottish-Fold.png"
+  },
+  {
+    "name": "Charlie",
+    "age": 2,
+    "species": "American Shorthair",
+    "personality": "Mischievous and playful, always finding new toys to play with.",
+    "photo": "American-Shorthair.png"
+  },
+  {
+    "name": "Sophie",
+    "age": 5,
+    "species": "Norwegian Forest",
+    "personality": "Dignified and stoic, with a love for quiet and peaceful environments.",
+    "photo": "Norwegian-Forest.png"
+  }
+]
