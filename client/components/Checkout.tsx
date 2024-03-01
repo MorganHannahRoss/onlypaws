@@ -1,7 +1,14 @@
 import React, { useState } from 'react'
-
+import catsData from '../Data/cats.json'
+import EmptyCartButton from './EmptyCartButton.tsx'
 interface Props {
   trolley: string[]
+  setTrolley: (trolley: string[]) => void
+}
+
+function getImgFromName(name: string) {
+  const cat = catsData.find((cat) => cat.name == name)
+  return '/client/img/' + cat?.photo
 }
 
 function Checkout(props: Props) {
@@ -13,17 +20,28 @@ function Checkout(props: Props) {
     }
     return acc
   }, {})
-  console.log(totals)
   return (
     <div>
       <h1>Checkout</h1>
-      <ul>
+      <div className="checkout">
+        <EmptyCartButton
+          trolley={props.trolley}
+          setTrolley={props.setTrolley}
+        />
+
         {Object.keys(totals).map((item, index) => (
-          <li key={index}>
-            {item}: {totals[item]}
-          </li>
+          <div className="checkout-item" key={index}>
+            <img
+              src={getImgFromName(item)}
+              alt={item}
+              className="checkout-img"
+            />
+            <div className="text-container">
+              <p className="checkout-txt">{item}</p>
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   )
 }
