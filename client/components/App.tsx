@@ -58,10 +58,10 @@ function App() {
       </header>
 
       <>
-        {/* Iterate over each cat and display its information */}
-        {cats.map((cat, index) => (
-          <section className="container" key={index}>
-            <div className="product-card">
+        <div className="container" key="placeholder">
+          {/* Iterate over each cat and display its information */}
+          {cats.map((cat) => (
+            <div key="testrt" className="product-card">
               <img
                 src={getImgFromName(cat.name)}
                 alt={cat.personality}
@@ -73,11 +73,13 @@ function App() {
               <p>Age: {cat.age}</p>
               <button onClick={() => addToTrolley(cat)}>Adopt Now</button>
             </div>
-          </section>
-        ))}
+
+          ))}
+        </div>
 
         {/* Display the trolley */}
         <Checkout trolley={trolley} setTrolley={setTrolley} />
+
       </>
     </div>
   )
