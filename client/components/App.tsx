@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import catsData from '../Data/cats.json'
+import logoOnlyPaws from './logo_only_paws.png'
 
 interface Cat {
   name: string
@@ -14,6 +15,10 @@ function getImgFromName(name: string) {
   return cat ? `/client/img/${cat.photo}` : '' // Adjusted path to match your setup
 }
 
+function getLogoSrc() {
+  return logoOnlyPaws // Return the imported logo image path
+}
+
 function App() {
   const [cats, setCats] = useState<Cat[]>([])
 
@@ -26,14 +31,11 @@ function App() {
   return (
     <div className="body">
       <header>
-        <h1>ONLY PAWS</h1>
-
-        {/* <img
-          class="logo"
+        <img
+          className="logo"
           alt="cat logo"
-          src="/logo.png"
-          
-        /> */}
+          src={getLogoSrc()} // Call the function to get the logo image path
+        />
       </header>
 
       <>
