@@ -1,8 +1,5 @@
-import { Outlet } from 'react-router-dom'
-import { React, useEffect, useState } from 'react'
-// import '../main.css' // havent create yet ( CSS FILE NEEDED)
-import '../Data'
-import '../img'
+import { useEffect, useState } from 'react'
+import catsData from '../Data/cats.json'
 
 interface Cat {
   name: string
@@ -12,34 +9,50 @@ interface Cat {
   photo: string
 }
 
-// "name": "Oliver",
-// "age": 5,
-// "species": "Maine Coon",
-// "personality": "Laid-back and friendly, enjoys lounging around in cozy spots.",
-// "photo": "Maine-Coon.png"
-
-const cat
+function getImgFromName(name: string) {
+  const cat = catsData.find((cat) => cat.name === name)
+  return cat ? `/client/img/${cat.photo}` : '' // Adjusted path to match your setup
+}
 
 function App() {
-  return (
-    <>
-      <div className="container-of-single-cat-product">
-        <img
-          src="{/images/color_earth.gif}" // image calling function
-          alt="alt code fuction call " // ALT TEXT LINK
-        />
-        <h2>{cat.name}</h2> {/* name of cat in H2 */}
-        <h3>{cat.personality}</h3> {/* descrption of cat in H3 */}
-      </div>
-      {/* 
-// will map this  */}
+  const [cats, setCats] = useState<Cat[]>([])
 
-      {/* <div >
-        <Nav />
-NOTES FOR LATER 
-        <Outlet />
-      </div> */}
-    </>
+  useEffect(() => {
+    // Set the cats state with the data from catsData
+    setCats(catsData)
+  }, [])
+  //code below
+
+  return (
+    <div className="body">
+      <header>
+        {/* <img
+          class="logo"
+          alt="cat logo"
+          src="/logo.png"
+        /> */}
+      </header>
+
+      <>
+        {/* Iterate over each cat and display its information */}
+        {cats.map((cat, index) => (
+          <section className="container" key={index}>
+            <div className="product-card">
+              <img
+                src={getImgFromName(cat.name)}
+                alt={cat.personality}
+                width="100%"
+              />
+              <h2>{cat.name}</h2>
+              <p>{cat.species}</p>
+              <p>{cat.personality}</p>
+              <p>{cat.age}</p>
+              <button>Adopt Now</button>
+            </div>
+          </section>
+        ))}
+      </>
+    </div>
   )
 }
 
