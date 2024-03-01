@@ -26,10 +26,13 @@ function App() {
   return (
     <div className="body">
       <header>
+        <h1>ONLY PAWS</h1>
+
         {/* <img
           class="logo"
           alt="cat logo"
           src="/logo.png"
+          
         /> */}
       </header>
 
@@ -43,10 +46,10 @@ function App() {
                 alt={cat.personality}
                 width="100%"
               />
-              <h2>{cat.name}</h2>
-              <p>{cat.species}</p>
-              <p>{cat.personality}</p>
-              <p>{cat.age}</p>
+              <h2>Name: {cat.name}</h2>
+              <p>Species: {cat.species}</p>
+              <p>Temperment: {cat.personality}</p>
+              <p>Age: {cat.age}</p>
               <button>Adopt Now</button>
             </div>
           </section>
