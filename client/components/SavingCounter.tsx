@@ -27,7 +27,7 @@ const CounterButton = (props: Props) => {
   return (
     <div>
       <button onClick={incrementCount}>
-        Clicked {count} {count === 1 ? 'time' : 'times'}
+        {props.name} Clicked {count} {count === 1 ? 'time' : 'times'}
       </button>
     </div>
   )

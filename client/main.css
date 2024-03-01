@@ -3,3 +3,58 @@ body {
   color: #0a1520;
   font-family: 'Poppins', sans-serif;
 }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns, adjust as needed */
+  direction: rtl; /* Right-to-left to start filling from the right */
+}
+
+.grid-item {
+  direction: ltr; /* Reset text direction inside items if needed */
+}
+
+.checkout {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(200px, 1fr)
+  ); /* Adjust minmax() for your item size */
+  direction: rtl;
+  gap: 10px;
+  align-content: start;
+  overflow-y: auto;
+}
+
+.checkout-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  background: pink;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.checkout-img {
+  width: 4rem;
+  height: 4rem;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.checkout-txt {
+  margin: 0rem;
+  margin-left: 0.5rem;
+}
+
+.checkout-card {
+  display: grid;
+  grid-template-columns: auto 1fr; /* Adjust the size of the first column as needed */
+  grid-template-rows: auto auto; /* Adjust based on content */
+  gap: 10px; /* Space between rows and columns */
+  align-items: start; /* Align items at the start of each cell */
+}
