@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import catsData from '../Data/cats.json'
 import logoOnlyPaws from './logo_only_paws.png'
+import Checkout from './Checkout'
 
 interface Cat {
   name: string
@@ -21,6 +22,24 @@ function getLogoSrc() {
 
 function App() {
   const [cats, setCats] = useState<Cat[]>([])
+
+  // Save the trolley to local storage
+  const [trolley, setTrolley] = useState(() => {
+    const savedTrolley = localStorage.getItem('trolley')
+    if (savedTrolley) {
+      return JSON.parse(savedTrolley)
+    } else {
+      return []
+    }
+  })
+  const catNames = catsData.map((cat) => cat.name)
+  useEffect(() => {
+    localStorage.setItem('trolley', JSON.stringify(trolley))
+  }, [trolley])
+  // Function to add cat to trolley
+  const addToTrolley = (cat: object) => {
+    setTrolley([...trolley, cat.name])
+  }
 
   useEffect(() => {
     // Set the cats state with the data from catsData
@@ -52,10 +71,15 @@ function App() {
               <p>Species: {cat.species}</p>
               <p>Temperment: {cat.personality}</p>
               <p>Age: {cat.age}</p>
-              <button>Adopt Now</button>
+              <button onClick={() => addToTrolley(cat)}>Adopt Now</button>
             </div>
+
           ))}
         </div>
+
+        {/* Display the trolley */}
+        <Checkout trolley={trolley} setTrolley={setTrolley} />
+
       </>
     </div>
   )
